@@ -1,0 +1,27 @@
+{
+  "name": "rucoy-scamsnipe",
+  "version": "1.0.0",
+  "description": "An utility to help catch scammers in Rucoy Online!",
+  "main": "server.js",
+  "scripts": {
+    "start": "node ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Na-Hikari/Rucoy-Online-Utilities.git"
+  },
+  "keywords": [
+    "rucoy",
+    "rucoyonline"
+  ],
+  "author": "helloyanis",
+  "license": "CC-BY-NC-SA-4.0",
+  "bugs": {
+    "url": "https://github.com/Na-Hikari/Rucoy-Online-Utilities/issues"
+  },
+  "homepage": "https://github.com/Na-Hikari/Rucoy-Online-Utilities#readme",
+  "dependencies": {
+    "jsdom": "^24.0.0",
+    "node-fetch": "^2.7.0"
+  }
+}
