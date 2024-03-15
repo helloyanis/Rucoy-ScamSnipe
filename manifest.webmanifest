@@ -1,0 +1,16 @@
+{
+  "name": "Rucoy ScamSnipe",
+  "short_name": "ScamSnipe",
+  "description": "See info about scammers in the game Rucoy Online, updated in real time.",
+  "icons": [
+    {
+      "src": "icon.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#fff",
+  "theme_color": "#01c101"
+}
