@@ -32,6 +32,12 @@ jobs:
 
     - name: Start
       run: npm start
+    
+    - name: Check for changes
+      id: check_changes
+      run: |
+        git diff --quiet || exit 0
+        exit 1
 
     - name: Push changes
       if: ${{ github.actor != 'github-actions[bot]' }}
