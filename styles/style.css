@@ -51,7 +51,7 @@ a{
     margin-top: 20px;
 }
 .card{
-    width: 300px;
+    width: auto;
     margin: 10px;
     padding: 10px;
     border-radius: 10px;
@@ -79,4 +79,7 @@ a{
 }
 .card-body{
     margin-top: 10px;
+}
+.card-body img{
+    max-width: 25em;
 }

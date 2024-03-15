@@ -16,15 +16,15 @@ async function loadJSONData() {
           </div>
           <div class="card-body">
             <p>
-              <strong>Scam Type:</strong> ${element.reason}
+              <strong>Scam Type:</strong><br>${element.reason}
             </p>
             <p>
-              <strong>Discord account(s) IDs:</strong> ${element.discord_accounts.join(
+              <strong>Discord account(s) IDs:</strong><br>${element.discord_accounts.join(
                 ", "
               )}
             </p>
             <p>
-              <strong>In-game name history:</strong> ${element.name_history.join(
+              <strong>Name history:</strong><br>${element.name_history.join(
                 ", "
               )}
             </p>
