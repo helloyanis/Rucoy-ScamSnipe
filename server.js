@@ -29,12 +29,13 @@ async function getUserInfo(name) {
 }
 async function main() {
     for (let i = 0; i < jsonData.length; i++) {
-        for (let oldName in jsonData[i]) {
-            let newName = await getUserInfo(oldName);
-            if (oldName !== newName) {
-                jsonData[i][newName] = jsonData[i][oldName];
-                delete jsonData[i][oldName];
-            }
+        newName = await getUserInfo(jsonData[i].name);
+        if (jsonData[i].name != newName && newName != null) {
+          console.log(
+            "Name change detected: " + jsonData[i].name + " -> " + newName
+          );
+          jsonData[i].name = newName;
+          jsonData[i].name_history.push(jsonData[i].name);
         }
     }
     //Write the new json file
