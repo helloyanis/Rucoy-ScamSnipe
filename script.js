@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 async function loadJSONData() {
   fetch("scammer_list.json", {"cache-control": "no-cache"})
     .then((response) => {
-      response.json()
+      return response.json()
     })
     .then((json) => {
       json.forEach((element) => {
