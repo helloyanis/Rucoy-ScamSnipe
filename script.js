@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", (event) => {
   loadJSONData();
   document.querySelector("#search").addEventListener("keyup", search);
+  document.querySelector("#searchform").addEventListener("submit", handleForm);
 });
 async function loadJSONData() {
     fetch("scammer_list.json")
@@ -26,6 +27,7 @@ async function loadJSONData() {
             });
         });
 }
+
 function search() {
   let input = document.querySelector('#search').value
   input=input.toLowerCase();
@@ -39,5 +41,8 @@ function search() {
       x[i].style.display="block";        
     }
   }
+}
+function handleForm(event) {
+  event.preventDefault();
 }
 
