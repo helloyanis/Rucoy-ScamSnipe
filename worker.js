@@ -6,14 +6,14 @@ const addResourcesToCache = async (resources) => {
 self.addEventListener("install", (event) => {
   event.waitUntil(
     addResourcesToCache([
-      "/",
-      "/index.html",
-      "/about.html",
-      "/icon.png",
-      "/styles/style.css",
-      "/styles/nav.css",
-      "/styles/search.css",
-      "/script.js",
+      "/Rucoy-ScamSnipe/",
+      "/Rucoy-ScamSnipe/index.html",
+      "/Rucoy-ScamSnipe/about.html",
+      "/Rucoy-ScamSnipe/icon.png",
+      "/Rucoy-ScamSnipe/styles/style.css",
+      "/Rucoy-ScamSnipe/styles/nav.css",
+      "/Rucoy-ScamSnipe/styles/search.css",
+      "/Rucoy-ScamSnipe/script.js",
     ])
   );
 });
