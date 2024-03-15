@@ -4,13 +4,21 @@ document.addEventListener("DOMContentLoaded", (event) => {
   document.querySelector("#searchform").addEventListener("submit", handleForm);
 });
 async function loadJSONData() {
-    fetch("scammer_list.json")
-        .then(response => response.json())
-        .then(json => {
-            json.forEach(element => {
-                document.querySelector(
-                  ".cardcont"
-                ).innerHTML += `<div class="card" onclick="window.open('https://www.rucoyonline.com/characters/${element.name}')">
+  fetch("scammer_list.json")
+    .then((response) => {
+      response.setHeader(
+        "Cache-Control",
+        "no-cache"
+      );
+      response.json()
+    })
+    .then((json) => {
+      json.forEach((element) => {
+        document.querySelector(
+          ".cardcont"
+        ).innerHTML += `<div class="card" onclick="window.open('https://www.rucoyonline.com/characters/${
+          element.name
+        }')">
           <div class="card-header">
             <h2>${element.name}</h2>
           </div>
@@ -30,25 +38,23 @@ async function loadJSONData() {
             </p>
           </div>
         </div>`;
-            });
-        });
+      });
+    });
 }
 
 function search() {
-  let input = document.querySelector('#search').value
-  input=input.toLowerCase();
-  let x = document.getElementsByClassName('card');
-  
+  let input = document.querySelector("#search").value;
+  input = input.toLowerCase();
+  let x = document.getElementsByClassName("card");
+
   for (i = 0; i < x.length; i++) {
     if (!x[i].innerHTML.toLowerCase().includes(input)) {
-      x[i].style.display="none";
-    }
-    else {
-      x[i].style.display="block";        
+      x[i].style.display = "none";
+    } else {
+      x[i].style.display = "block";
     }
   }
 }
 function handleForm(event) {
   event.preventDefault();
 }
-
