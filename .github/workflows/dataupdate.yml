@@ -1,7 +1,8 @@
 name: Automatic data update
-on: workflow_dispatch
- # schedule:
- #   - cron:  '0 0,6,12 * * *'
+on: 
+  schedule:
+    - cron:  '0 0,6,12 * * *'
+  workflow_dispatch:
 permissions:
   contents: write
 
@@ -11,19 +12,40 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v4
+
+    - name: Get last commit info
+      id: last_commit
+      run: |
+        LAST_COMMIT_HASH=$(git rev-parse HEAD)
+        LAST_COMMIT_AUTHOR=$(git log -1 --pretty=format:'%ae' HEAD)
+        echo "::set-output name=hash::$LAST_COMMIT_HASH"
+        echo "::set-output name=author::$LAST_COMMIT_AUTHOR"
+
     - name: Setup node
       uses: actions/setup-node@v4
       with:
         node-version: 21.2.x
         cache: npm
+
     - name: Install
       run: npm install
+
     - name: Start
       run: npm start
+
     - name: Push changes
+      if: ${{ github.actor != 'github-actions[bot]' }}
       run: |
-          git config user.name github-actions
-          git config user.email github-actions@github.com
-          git add .
-          git commit -m "generated"
-          git push
+        git config user.name github-actions
+        git config user.email github-actions@github.com
+        git add .
+        git commit -m "Automatic update"
+        git push
+
+    - name: Amend last commit
+      if: ${{ github.actor == 'github-actions[bot]' && steps.last_commit.outputs.author == 'github-actions@github.com' }}
+      run: |
+        git config user.name github-actions
+        git config user.email github-actions@github.com
+        git commit --amend --no-edit
+        git push --force
