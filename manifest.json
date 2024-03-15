@@ -1,0 +1,10 @@
+{
+  "name": "Rucoy ScamSnipe",
+  "icons": [
+    {
+      "src": "icon.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}

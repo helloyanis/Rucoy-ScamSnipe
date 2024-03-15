@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
   loadJSONData();
   document.querySelector("#search").addEventListener("keyup", search);
   document.querySelector("#searchform").addEventListener("submit", handleForm);
+  registerServiceWorker();
 });
 async function loadJSONData() {
   fetch("scammer_list.json")
@@ -58,3 +59,23 @@ function search() {
 function handleForm(event) {
   event.preventDefault();
 }
+const registerServiceWorker = async () => {
+  if ("serviceWorker" in navigator) {
+    try {
+      const registration = await navigator.serviceWorker.register("/sw.js", {
+        scope: "/",
+      });
+      if (registration.installing) {
+        console.log("Service worker installing");
+      } else if (registration.waiting) {
+        console.log("Service worker installed");
+      } else if (registration.active) {
+        console.log("Service worker active");
+      }
+    } catch (error) {
+      console.error(`Registration failed with ${error}`);
+    }
+  }
+};
+
+
