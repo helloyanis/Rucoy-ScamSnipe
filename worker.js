@@ -4,6 +4,7 @@ const addResourcesToCache = async (resources) => {
 };
 
 self.addEventListener("install", (event) => {
+  event.waitUntil(self.skipWaiting());
   event.waitUntil(
     addResourcesToCache([
       "/Rucoy-ScamSnipe/",
