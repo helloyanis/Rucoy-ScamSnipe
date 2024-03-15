@@ -17,3 +17,6 @@ self.addEventListener("install", (event) => {
     ])
   );
 });
+self.addEventListener("activate", function (event) {
+  event.waitUntil(self.clients.claim());
+});
