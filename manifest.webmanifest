@@ -5,11 +5,30 @@
   "icons": [
     {
       "src": "icon.png",
-      "type": "image/png"
+      "type": "image/png",
+      "sizes": "161x161",
+      "purpose": "any maskable"
     }
   ],
-  "start_url": "/index.html",
+  "start_url": "index.html",
   "display": "standalone",
   "background_color": "#fff",
-  "theme_color": "#01c101"
+  "theme_color": "#01c101",
+  "screenshots" : [
+  {
+    "src": "screenshots/screenshot_narrow.jpg",
+    "sizes": "1080x2168",
+    "type": "image/webp",
+    "form_factor": "narrow",
+    "label": "Main screen on a narrow viewport"
+  },
+  {
+    "src": "screenshots/screenshot_wide.png",
+    "sizes": "1496x931",
+    "type": "image/png",
+    "form_factor": "wide",
+    "label": "Main screen on a wide viewport"
+  }
+]
+
 }
