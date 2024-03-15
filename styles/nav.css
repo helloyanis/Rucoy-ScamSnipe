@@ -511,26 +511,14 @@ h1 {
     position: relative;
     color: #ececee;
     transition: all 250ms linear;
+    text-decoration: none;
 }
 
 .nav ul li a:hover {
-    text-decoration: none;
     color: #ffeba7;
 }
 
-.nav ul li a:after {
-    display: block;
-    position: absolute;
-    top: 50%;
-    content: '';
-    height: 2vh;
-    margin-top: -1vh;
-    width: 0;
-    left: 0;
-    background-color: #353746;
-    opacity: 0.8;
-    transition: width 250ms linear;
-}
+
 
 .nav ul li a:hover:after {
     width: 100%;
