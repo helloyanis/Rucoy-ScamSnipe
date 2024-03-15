@@ -1,0 +1,1 @@
+ [Rucoy ScamSnipe](https://github.com/helloyanis/Rucoy-ScamSnipe) © 2024 by [helloyanis](https://github.com/helloyanis) & [Hikari](https://github.com/Na-Hikari) is licensed under [Attribution-NonCommercial-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-nc-sa/4.0/).

@@ -1,12 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rucoy ScamSnipe</title>
-</head>
-<body>
-    <script src="script.ts"></script>
-    
-</body>
+    <link rel="stylesheet" href="styles/nav.css" />
+    <link rel="stylesheet" href="styles/search.css" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="styles/cards.css" />
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <input class="menu-icon" type="checkbox" id="menu-icon" name="menu-icon" />
+    <label for="menu-icon"></label>
+    <nav>
+      <div class="wrapper">
+        <div class="logo"><a href="#">Rucoy ScamSnipe</a></div>
+      </div>
+    </nav>
+
+    <nav class="nav">
+      <ul class="pt-5">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li>
+          <a href="https://discord.gg/rucoy-online-342471443218432031"
+            >Submit data</a
+          >
+        </li>
+      </ul>
+    </nav>
+    <main>
+      <div class="cardcont">
+        
+        </div>
+    </main>
+    <footer>
+      <form>
+        <label for="search">Search for a player</label>
+        <input id="search" type="search" pattern=".*\S.*" required />
+        <span class="caret"></span>
+      </form>
+    </footer>
+  </body>
 </html>
