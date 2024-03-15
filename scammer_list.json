@@ -1,1 +1,28 @@
-[{"name":"Bolec Hrd","reason":"Test image<br><img src='https://url-to-proof.jpg'>","name_history":["Abesi Bdjl","Bolec Hrd"],"discord_accounts":["124567890","0987654321"]},{"name":"The Sword Hero","reason":"Test<br><img src='https://url-to-proof.jpg'>","name_history":["abra back vl","The Sword Hero"],"discord_accounts":["124567890","0987654321"]}]
+[
+  {
+    "name" : "Abesi Bdjl",
+    "reason" : "Test image<br><img src='https://url-to-proof.jpg'>",
+    "name_history" :
+    [
+        "Abesi Bdjl"
+    ],
+    "discord_accounts" :
+    [
+        "124567890",
+        "0987654321"
+    ]
+  },
+    {
+    "name" : "abra back vl",
+    "reason" : "Test<br><img src='https://url-to-proof.jpg'>",
+    "name_history" :
+    [
+        "abra back vl"
+    ],
+    "discord_accounts" :
+    [
+        "124567890",
+        "0987654321"
+    ]
+  }
+]
