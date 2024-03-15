@@ -5,12 +5,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
   registerServiceWorker();
 });
 async function loadJSONData() {
-  fetch("scammer_list.json")
+  fetch("scammer_list.json", {"cache-control": "no-cache"})
     .then((response) => {
-      response.setHeader(
-        "Cache-Control",
-        "no-cache"
-      );
       response.json()
     })
     .then((json) => {
