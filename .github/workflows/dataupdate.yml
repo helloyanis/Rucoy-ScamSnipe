@@ -32,26 +32,29 @@ jobs:
     - name: Start
       run: npm start
     
-    - name: Check for changes
-      id: check_changes
-      run: |
-        git diff --raw > /dev/null
-        if [ $? -eq 0 ]; then
-           exit 0
-        fi
     - name: Push changes
       if: ${{ github.actor != 'github-actions[bot]' }}
       run: |
         git config user.name github-actions
         git config user.email github-actions@github.com
         git add .
-        git commit -m "Automatic update"
-        git push
+        if git diff --cached --exit-code; then
+          echo "No changes to commit"
+        else
+          git commit -m "Automatic update"
+          git push
+        fi
+
 
     - name: Amend last commit
       if: ${{ github.actor == 'github-actions[bot]' && steps.last_commit.outputs.author == 'github-actions@github.com' }}
       run: |
         git config user.name github-actions
         git config user.email github-actions@github.com
-        git commit --amend --no-edit
-        git push --force
+        git add .
+        if git diff --cached --exit-code; then
+          echo "No changes to commit"
+        else
+          git commit --amend --no-edit
+          git push --force
+        fi
