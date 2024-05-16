@@ -48,10 +48,11 @@ a{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    margin-top: 20px;
+    margin: 20px 0 50px;
 }
 .card{
     width: auto;
+    max-width: 500px;
     margin: 10px;
     padding: 10px;
     border-radius: 10px;
@@ -79,5 +80,5 @@ a{
     margin-top: 10px;
 }
 .card-body img{
-    max-width: 80%;
+    max-width: 80%
 }
